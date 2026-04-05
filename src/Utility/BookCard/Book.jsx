@@ -5,13 +5,13 @@ const Book = ({ book }) => {
     bookName,
     author,
     image,
-    review,
-    totalPages,
+    // review,
+    // totalPages,
     rating,
-    category,
+    // category,
     tags,
-    publisher,
-    yearOfPublishing,
+    // publisher,
+    // yearOfPublishing,
   } = book;
   return (
     <div className="w-full flex flex-col bg-white rounded-xl md:rounded-3xl border border-gray-300 shadow-md overflow-hidden p-2 md:p-3 md:hover:-translate-y-0.5 md:hover:shadow-[0_7px_20px_-10px_gray] transition-all duration-300 ease-in-out">
@@ -24,56 +24,32 @@ const Book = ({ book }) => {
         />
       </div>
       {/* middle section */}
-      <div className="pt-4 pb-5 flex flex-col grow ">
-        {/* ── GENRE TAGS ─────────────────────────────────── */}
+      <div className="pt-4 pb-5 flex flex-col">
         <div className="flex gap-2 mb-3.25">
-          {/* Tag: Young Adult */}
-          <span
-            className="px-3.25 py-1.25 rounded-full text-[12px] font-semibold border"
-            style={{
-              background: "#edfaf4",
-              color: "#1a7a52",
-              borderColor: "#c6edd9",
-              fontFamily: "'DM Sans', sans-serif",
-            }}
-          >
-            {tags[0]}
-          </span>
-
-          {/* Tag: Identity */}
-          <span
-            className="px-[13px] py-[5px] rounded-full text-[12px] font-semibold border"
-            style={{
-              background: "#edfaf4",
-              color: "#1a7a52",
-              borderColor: "#c6edd9",
-              fontFamily: "'DM Sans', sans-serif",
-            }}
-          >
-            {tags[1]}
-          </span>
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-3.25 py-1 rounded-xl text-[12px] font-semibold border bg-green-50 border-green-300 text-green-600"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
-        {/* ── END GENRE TAGS ─────────────────────────────── */}
-
-        {/* ── BOOK TITLE ─────────────────────────────────── */}
         <h2
           className="text-[20px] font-extrabold text-gray-950 leading-tight tracking-tight mb-[5px]"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {bookName}
         </h2>
-
-        {/* ── AUTHOR ─────────────────────────────────────── */}
         <p className="text-[12.5px] text-gray-400 font-medium mb-4">
           By : {author}
         </p>
-        {/* ── END FOOTER ROW ─────────────────────────────── */}
       </div>
 
       {/* bottom section */}
       <div className="flex flex-col  mt-auto">
         {/* ── DASHED DIVIDER ─────────────────────────────── */}
-        <div className="border-t border-dashed border-gray-200 mb-[14px]" />
+        <div className="border-t border-dashed border-gray-200 mb-3.5" />
 
         {/* ── FOOTER ROW — Genre LEFT · Rating RIGHT ─────── */}
         <div className="flex items-center justify-between mt-auto">
