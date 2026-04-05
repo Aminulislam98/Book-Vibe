@@ -1,26 +1,32 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Book = ({ book }) => {
   const {
+    bookId,
     bookName,
     author,
     image,
     // review,
     // totalPages,
     rating,
-    // category,
+    category,
     tags,
     // publisher,
     // yearOfPublishing,
   } = book;
   return (
-    <div className="w-full flex flex-col bg-white rounded-xl md:rounded-3xl border border-gray-300 shadow-md overflow-hidden p-2 md:p-3 md:hover:-translate-y-0.5 md:hover:shadow-[0_7px_20px_-10px_gray] transition-all duration-300 ease-in-out">
+    <Link
+      to={`book-details/${bookId}`}
+      title="Click to show details"
+      className="w-full flex flex-col bg-white rounded-xl md:rounded-3xl border border-gray-300 shadow-md overflow-hidden p-2 md:p-3 md:hover:-translate-y-0.5 md:hover:shadow-[0_7px_20px_-10px_gray] transition-all duration-300 ease-in-out cursor-pointer "
+    >
       {/* top section  */}
-      <div className="rounded-xl md:rounded-2xl bg-gray-800 max-h-60 h-full  flex items-center justify-center overflow-hidden py-4">
+      <div className="rounded-xl md:rounded-2xl bg-gray-800 max-h-60 h-full  flex items-center justify-center overflow-hidden py-4 ">
         <img
           src={image}
           alt={bookName}
-          className="w-auto object-contain drop-shadow-xl text-white h-full "
+          className="w-full h-full object-contain"
         />
       </div>
       {/* middle section */}
@@ -54,18 +60,20 @@ const Book = ({ book }) => {
         {/* ── FOOTER ROW — Genre LEFT · Rating RIGHT ─────── */}
         <div className="flex items-center justify-between mt-auto">
           {/* Genre label */}
-          <span className="text-[13px] text-gray-400 font-medium">Fiction</span>
+          <span className="text-[13px] text-green-600 font-medium">
+            {category}
+          </span>
 
           {/* Rating + star */}
-          <div className="flex items-center gap-1.25">
+          <div className="flex justify-center items-center gap-1.25">
             {/* Numeric rating */}
-            <span className="text-[13px] text-gray-400 font-semibold">
+            <span className="text-[13px] text-yellow-600 font-semibold">
               {rating}
             </span>
 
             {/* Outline star */}
             <svg
-              className="w-4 h-4 text-gray-300"
+              className="w-4 h-4 text-yellow-600"
               fill="none"
               stroke="currentColor"
               strokeWidth={1.5}
@@ -81,7 +89,7 @@ const Book = ({ book }) => {
           {/* ── END RATING ─────────────────────────────── */}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

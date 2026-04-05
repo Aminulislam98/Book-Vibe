@@ -6,11 +6,25 @@ const Banner = () => {
     <section className="mt-12 px-4">
       <div className="hero bg-gray-800 min-h-[70vh] max-w-7xl w-full mx-auto rounded-2xl">
         <div className="hero-content flex-col lg:flex-row-reverse w-full justify-between px-4 md:px-30">
-          <img
-            src={BannerBook}
-            className="max-w-sm rounded-lg "
-            alt="banner-book"
-          />
+          <div className="hover-3d">
+            {/* content */}
+            <figure className="bg-transparent rounded-2xl">
+              <img
+                src={BannerBook}
+                className="max-w-sm rounded-lg"
+                alt="banner-book"
+              />
+            </figure>
+            {/* 8 empty divs needed for the 3D effect */}
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           <div className="flex flex-col gap-y-4 lg:gap-y-10">
             <h1 className="text-3xl lg:text-6xl font-bold  lg:leading-17 text-white">
               Books to freshen up <br className="lg:flex hidden" /> your
