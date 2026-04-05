@@ -1,6 +1,20 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
+  const list = (
+    <>
+      <li>
+        <Link to={"/"}>Home</Link>
+      </li>
+      <li>
+        <Link to={"/book"}>Listed Books</Link>
+      </li>
+      <li>
+        <Link to={"/pages-to-read"}>Pages to Read</Link>
+      </li>
+    </>
+  );
   return (
     <section className="shadow-sm">
       <div className="navbar bg-base-100  max-w-7xl w-full mx-auto">
@@ -26,30 +40,14 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Listed Books</a>
-              </li>
-              <li>
-                <a>Pages to Read</a>
-              </li>
+              {list}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex flex-row gap-x-4">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Listed Books</a>
-            </li>
-            <li>
-              <a>Pages to Read</a>
-            </li>
+            {list}
           </ul>
         </div>
         <div className="navbar-end flex flex-row gap-x-3 text-white">
