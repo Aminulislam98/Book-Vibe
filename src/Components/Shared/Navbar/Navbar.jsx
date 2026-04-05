@@ -17,7 +17,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive && "border-b-3 border-green-300 text-green-600"
+            isActive ? "border-b-3 border-green-300 text-green-600" : ""
           }
           to={"books"}
         >
