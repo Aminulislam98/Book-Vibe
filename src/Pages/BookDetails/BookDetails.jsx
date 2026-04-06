@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { BooksContext } from "../../Context/BookContext/BookProvider.jsx";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -17,6 +18,10 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = existBook;
+
+  const { handleBookMarkRead, storeBooks, setStoreBooks } =
+    useContext(BooksContext);
+  console.log(storeBooks);
 
   return (
     <div
@@ -307,10 +312,15 @@ const BookDetails = () => {
               </div>
 
               {/* CTA buttons */}
-              <button className="w-full py-3.5 rounded-xl bg-[#111827] text-white text-[13.5px] font-semibold tracking-wide hover:bg-[#1f2937] transition-colors mb-2.5">
-                Read Now
+              <button
+                onClick={() => {
+                  handleBookMarkRead(existBook);
+                }}
+                className="w-full py-3.5 rounded-xl bg-[#111827] text-white text-[13.5px] font-semibold tracking-wide hover:bg-[#1f2937] transition-colors mb-2.5 cursor-pointer"
+              >
+                Mark as Read
               </button>
-              <button className="w-full py-3 rounded-xl bg-white text-gray-600 text-[13.5px] font-semibold border border-gray-200 hover:bg-gray-50 transition-colors mb-4">
+              <button className="w-full py-3 rounded-xl bg-white text-gray-600 text-[13.5px] font-semibold border border-gray-200 hover:bg-gray-50 transition-colors mb-4 cursor-pointer">
                 + Add to Wishlist
               </button>
 
