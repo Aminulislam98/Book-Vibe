@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { BooksContext } from "../../Context/BookContext/BookProvider.jsx";
 
@@ -19,9 +19,7 @@ const BookDetails = () => {
     yearOfPublishing,
   } = existBook;
 
-  const { handleBookMarkRead, storeBooks, setStoreBooks } =
-    useContext(BooksContext);
-  console.log(storeBooks);
+  const { handleBookMarkRead, handleWishlist } = useContext(BooksContext);
 
   return (
     <div
@@ -320,7 +318,12 @@ const BookDetails = () => {
               >
                 Mark as Read
               </button>
-              <button className="w-full py-3 rounded-xl bg-white text-gray-600 text-[13.5px] font-semibold border border-gray-200 hover:bg-gray-50 transition-colors mb-4 cursor-pointer">
+              <button
+                onClick={() => {
+                  handleWishlist(existBook);
+                }}
+                className="w-full py-3 rounded-xl bg-white text-gray-600 text-[13.5px] font-semibold border border-gray-200 hover:bg-gray-50 transition-colors mb-4 cursor-pointer"
+              >
                 + Add to Wishlist
               </button>
 
