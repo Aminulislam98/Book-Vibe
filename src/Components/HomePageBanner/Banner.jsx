@@ -3,8 +3,8 @@ import BannerBook from "../../assets/bannerBook.png";
 
 const Banner = () => {
   return (
-    <section className="mt-12 px-4">
-      <div className="hero bg-gray-800 min-h-[70vh] max-w-7xl w-full mx-auto rounded-2xl">
+    <section className=" px-4 bg-[radial-gradient(ellipse_at_70%_50%,#0f2238_0%,#070f1e_40%,#020508_100%)]">
+      <div className="hero   min-h-[70vh] max-w-7xl w-full mx-auto rounded-2xl">
         <div className="hero-content flex-col lg:flex-row-reverse w-full justify-between px-4 md:px-30">
           <div className="hover-3d">
             {/* content */}

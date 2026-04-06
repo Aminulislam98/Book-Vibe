@@ -5,7 +5,7 @@ const booksPromise = fetch("/booksData.json").then((res) => res.json());
 const AllBooks = () => {
   const booksData = use(booksPromise);
   return (
-    <section className="mt-10 lg:mt-20  px-4">
+    <section className="px-4 bg-[radial-gradient(ellipse_at_70%_50%,#0f2238_0%,#070f1e_40%,#020508_100%)]">
       <div className="flex justify-center items-center pb-10 max-w-7xl w-full mx-auto">
         <h1 className="font-bold text-4xl">Books</h1>
       </div>
