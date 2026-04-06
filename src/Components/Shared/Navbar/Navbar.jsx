@@ -84,9 +84,9 @@ const Navbar = () => {
           <button className="border border-[#F5A623] text-[#F5A623] bg-transparent font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#F5A623] hover:text-[#020508] transition-colors duration-200">
             Sign In
           </button>
-          <a className="bg-[#F5A623] text-[#020508]  font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#d4891a] transition-colors duration-200">
+          <button className="bg-[#F5A623] text-[#020508]  font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#d4891a] transition-colors duration-200">
             Sign Up
-          </a>
+          </button>
         </div>
       </div>
     </section>
