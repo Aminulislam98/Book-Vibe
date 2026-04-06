@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBookOpen } from "react-icons/fa";
+import { Link } from "react-router";
 
 const ReadBookCard = ({ readBook }) => {
   const {
@@ -131,10 +132,16 @@ const ReadBookCard = ({ readBook }) => {
             Auto-renews at £5.99/month after trial.
           </p>
         </div>
-        <div className="w-full">
+        <div className="w-full flex flex-col gap-2">
           <button className="bg-[#F5A623] text-[#020508] w-full  font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#d4891a] transition-colors duration-200">
             Sign Up
           </button>
+          <Link
+            to={`/book-details/${bookId}`}
+            className="w-full font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer bg-transparent border border-[#b794f4] text-[#b794f4] hover:bg-[#2d1b4e] transition-colors duration-200 flex justify-center items-center"
+          >
+            View Page Details
+          </Link>
         </div>
       </div>
     </section>

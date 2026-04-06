@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBookOpen } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NoBooks = () => {
   return (
@@ -14,9 +15,12 @@ const NoBooks = () => {
         You haven't marked any books as read yet. Start exploring and track your
         reading journey.
       </p>
-      <button className="mt-2 px-7 py-2 rounded-lg bg-[#0d3b2e] text-[#00ff87] border border-[#1a6b50] hover:bg-[#1a6b50] transition-colors duration-200 text-sm font-medium">
+      <Link
+        to={"/"}
+        className="mt-2 px-7 py-2 rounded-lg bg-[#0d3b2e] text-[#00ff87] border border-[#1a6b50] hover:bg-[#1a6b50] transition-colors duration-200 text-sm font-medium"
+      >
         Browse Books
-      </button>
+      </Link>
     </div>
   );
 };

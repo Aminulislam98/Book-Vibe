@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NoWishList = () => {
   return (
@@ -12,9 +13,12 @@ const NoWishList = () => {
         Save books you want to read later. Find something you love and add it to
         your wishlist.
       </p>
-      <button className="mt-2 px-7 py-2 rounded-lg bg-[#2d1130] text-[#f472b6] border border-[#6b2150] hover:bg-[#6b2150] transition-colors duration-200 text-sm font-medium">
+      <Link
+        to={"/"}
+        className="mt-2 px-7 py-2 rounded-lg bg-[#2d1130] text-[#f472b6] border border-[#6b2150] hover:bg-[#6b2150] transition-colors duration-200 text-sm font-medium"
+      >
         Explore Books
-      </button>
+      </Link>
     </div>
   );
 };
