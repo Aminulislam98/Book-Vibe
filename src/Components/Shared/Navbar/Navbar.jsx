@@ -7,7 +7,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive && "border-b-3 border-green-300 text-green-600"
+            isActive && "text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
           }
           to={"/"}
         >
@@ -17,7 +17,9 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "border-b-3 border-green-300 text-green-600" : ""
+            isActive
+              ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
+              : ""
           }
           to={"books"}
         >
@@ -27,7 +29,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive && "border-b-3 border-green-300 text-green-600"
+            isActive && " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
           }
           to={"pages-to-read"}
         >
@@ -40,8 +42,8 @@ const Navbar = () => {
     <section className="shadow-sm bg-[#111827] text-white sticky top-0 z-50">
       <div className="navbar bg-[#111827]  max-w-7xl w-full mx-auto">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div className="dropdown space-x-4">
+            <div tabIndex={0} role="button" className=" lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -59,23 +61,23 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-black rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {list}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Book Vibe</a>
+          <a className=" text-xl font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex flex-row gap-x-4">
+          <ul className="menu menu-horizontal px-1 flex flex-row gap-x-4 text-white/70">
             {list}
           </ul>
         </div>
         <div className="navbar-end flex flex-row gap-x-3 text-white">
-          <button className=" bg-[#23BE0A] text-base font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer">
+          <button className="border border-[#F5A623] text-[#F5A623] bg-transparent font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#F5A623] hover:text-[#020508] transition-colors duration-200">
             Sign In
           </button>
-          <a className="bg-[#59C6D2] text-base font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer">
+          <a className="bg-[#F5A623] text-[#020508]  font-semibold py-1 px-3 md:py-2 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#d4891a] transition-colors duration-200">
             Sign Up
           </a>
         </div>
