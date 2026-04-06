@@ -5,8 +5,8 @@ import WhishListedBooks from "../../Components/ListedBooks/WhishListedBooks";
 
 const ListedBooks = () => {
   return (
-    <section className="px-4 min-h-screen text-black bg-white">
-      <Tabs className="max-w-6xl mx-auto">
+    <section className="px-4 min-h-[70vh] text-black bg-white">
+      <Tabs className="max-w-5xl mx-auto">
         <TabList className="flex gap-4 border-b-2 border-gray-300">
           <Tab
             className="px-4 py-2 cursor-pointer text-black/80"

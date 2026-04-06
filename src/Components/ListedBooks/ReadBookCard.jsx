@@ -18,12 +18,13 @@ const ReadBookCard = ({ readBook }) => {
     length,
     releaseDate,
     language,
+    price,
   } = readBook;
   return (
-    <section className="w-full mx-auto flex flex-col md:flex-row max-h-57  border border-gray-200 grow">
+    <section className="w-full mx-auto flex flex-col sm:flex-row  gap-5 grow border-b  border-gray-300  space-y-1 pb-5">
       {/* left side */}
-      <div className="border border-gray-200 max-w-3xl w-full flex flex-row justify-start items-start gap-1 md:gap-2">
-        <div className="w-30 md:w-37 h-full flex justify-start items-start aspect-2/3 shrink-0">
+      <div className="  max-w-3xl w-full flex flex-row justify-start items-start gap-2 ">
+        <div className="w-30 md:w-37 flex justify-start items-start aspect-2/3 shrink-0 rounded-xl overflow-hidden">
           <img
             src={image}
             alt={bookName}
@@ -31,74 +32,76 @@ const ReadBookCard = ({ readBook }) => {
           />
         </div>
 
-        <div className="px-2 text-white flex flex-col justify-start items-start space-y-0.5 md:space-y-1">
+        <div className="px-2 text-white flex flex-col justify-start items-start h-full">
           <h1 className="font-bold text-base md:text-xl text-[#0E5B9B]">
             {bookName}
           </h1>
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">By</p>
+            <p className="font-medium md:text-base text-sm text-[#061624]">
+              By
+            </p>
 
-            <p className="font-medium text-xs md:text-sm text-[#0E5B9B]">
+            <p className="font-medium md:text-base text-sm text-[#0E5B9B]">
               {author}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Narrated by:
             </p>
-            <p className="font-medium text-xs md:text-sm text-[#0E5B9B]">
+            <p className="font-medium md:text-base text-sm text-[#0E5B9B]">
               {narratedBy}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Length:
             </p>
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               {length}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Release date:
             </p>
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               {releaseDate}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Language:
             </p>
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               {language}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-2">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Number of Page:
             </p>
-            <div className="flex flex-row text-[#061624] text-xs md:text-sm justify-center items-center gap-1">
+            <div className="flex flex-row text-[#061624] md:text-base text-sm justify-center items-center gap-1">
               <FaBookOpen />
               {totalPages}
             </div>
           </div>
 
           <div className="flex flex-row justify-center items-center gap-1">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Publisher:
             </p>
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               {publisher}
             </p>
           </div>
           <div className="flex flex-row justify-center items-center gap-3">
-            <p className="font-medium text-xs md:text-sm text-[#061624]">
+            <p className="font-medium md:text-base text-sm text-[#061624]">
               Rating:
             </p>
             <div className="flex justify-between items-center gap-1 ">
               {/* Numeric rating */}
-              <span className=" text-yellow-600 font-medium text-xs md:text-sm">
+              <span className=" text-yellow-600 font-medium md:text-base text-sm">
                 {rating}
               </span>
 
@@ -121,8 +124,18 @@ const ReadBookCard = ({ readBook }) => {
         </div>
       </div>
       {/* right side */}
-      <div>
-        <div></div>
+      <div className="flex flex-col justify-center items-start gap-4">
+        <div>
+          <p>
+            <span className="font-bold">{`£${price}`}</span> or free with trial.
+            Auto-renews at £5.99/month after trial.
+          </p>
+        </div>
+        <div className="w-full">
+          <button className="bg-[#F5A623] text-[#020508] w-full  font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer hover:bg-[#d4891a] transition-colors duration-200">
+            Sign Up
+          </button>
+        </div>
       </div>
     </section>
   );
