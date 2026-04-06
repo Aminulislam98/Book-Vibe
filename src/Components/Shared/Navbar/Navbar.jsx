@@ -66,10 +66,17 @@ const Navbar = () => {
               {list}
             </ul>
           </div>
-          <a className=" text-xl font-bold">Book Vibe</a>
+          <div className=" text-xl font-bold flex flex-col justify-center items-center">
+            <p className="text-2xl">
+              <span>Book</span> <span className="text-[#b794f4]">Vibe</span>
+            </p>
+            <p className="text-[10px] font-normal hidden lg:flex text-[#b794f4]">
+              YOUR READING WORLD
+            </p>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex flex-row gap-x-4 text-white/70">
+          <ul className="menu menu-horizontal px-1 flex flex-row gap-x-4 text-white">
             {list}
           </ul>
         </div>
