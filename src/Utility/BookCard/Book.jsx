@@ -2,27 +2,15 @@ import React from "react";
 import { Link } from "react-router";
 
 const Book = ({ book }) => {
-  const {
-    bookId,
-    bookName,
-    author,
-    image,
-    // review,
-    // totalPages,
-    rating,
-    category,
-    tags,
-    // publisher,
-    // yearOfPublishing,
-  } = book;
+  const { bookId, bookName, author, image, rating, category, tags } = book;
   return (
     <Link
       to={`book-details/${bookId}`}
       title="Click to show details"
-      className="w-full flex flex-col bg-white rounded-xl md:rounded-3xl border border-gray-300 shadow-md overflow-hidden p-2 md:p-3 md:hover:-translate-y-0.5 md:hover:shadow-[0_7px_20px_-10px_gray] transition-all duration-300 ease-in-out cursor-pointer "
+      className="w-full flex flex-col rounded-t overflow-hidden  cursor-pointer"
     >
       {/* top section  */}
-      <div className="rounded-xl md:rounded-2xl bg-gray-800 max-h-60 h-full  flex items-center justify-center overflow-hidden py-4 ">
+      <div className="rounded-xl md:rounded-2xl bg-[#0f2238] max-h-40 h-full  flex items-center justify-center overflow-hidden py-4 ">
         <img
           src={image}
           alt={bookName}
@@ -30,19 +18,19 @@ const Book = ({ book }) => {
         />
       </div>
       {/* middle section */}
-      <div className="pt-4 pb-5 flex flex-col">
-        <div className="flex gap-2 mb-3.25">
+      <div className="pt-1  flex flex-col ">
+        <div className="flex gap-2 ">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3.25 py-1 rounded-xl text-[12px] font-semibold border bg-green-50 border-green-300 text-green-600"
+              className="rounded-xl text-[12px] font-semibold text-[#A3D4FF] "
             >
               {tag}
             </span>
           ))}
         </div>
         <h2
-          className="text-[20px] font-extrabold text-gray-950 leading-tight tracking-tight mb-[5px]"
+          className="text-base font-extrabold text-[#A3D4FF] hover:underline cursor-pointer"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           {bookName}
@@ -58,14 +46,14 @@ const Book = ({ book }) => {
         <div className="border-t border-dashed border-gray-200 mb-3.5" />
 
         {/* ── FOOTER ROW — Genre LEFT · Rating RIGHT ─────── */}
-        <div className="flex items-center justify-between mt-auto">
+        <div className="flex items-center justify-between mt-auto ">
           {/* Genre label */}
-          <span className="text-[13px] text-green-600 font-medium">
+          <span className="text-[13px] text-[#A3D4FF]  font-medium">
             {category}
           </span>
 
           {/* Rating + star */}
-          <div className="flex justify-center items-center gap-1.25">
+          <div className="flex justify-between items-center gap-1 ">
             {/* Numeric rating */}
             <span className="text-[13px] text-yellow-600 font-semibold">
               {rating}
