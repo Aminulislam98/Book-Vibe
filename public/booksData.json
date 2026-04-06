@@ -10,7 +10,11 @@
     "category": "Classic",
     "tags": ["Fiction", "Romance"],
     "publisher": "Scribner",
-    "yearOfPublishing": 1925
+    "yearOfPublishing": 1925,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 2,
@@ -23,7 +27,11 @@
     "category": "Fiction",
     "tags": ["Drama", "Social Justice"],
     "publisher": "J.B. Lippincott & Co.",
-    "yearOfPublishing": 1960
+    "yearOfPublishing": 1960,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 3,
@@ -36,7 +44,11 @@
     "category": "Fiction",
     "tags": ["Dystopian", "Political"],
     "publisher": "Secker & Warburg",
-    "yearOfPublishing": 1949
+    "yearOfPublishing": 1949,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 4,
@@ -49,7 +61,11 @@
     "category": "Fiction",
     "tags": ["Young Adult", "Identity"],
     "publisher": "Little, Brown and Company",
-    "yearOfPublishing": 1951
+    "yearOfPublishing": 1951,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 5,
@@ -62,7 +78,11 @@
     "category": "Classic",
     "tags": ["Romance", "Satire"],
     "publisher": "T. Egerton, Whitehall",
-    "yearOfPublishing": 1813
+    "yearOfPublishing": 1813,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 6,
@@ -75,7 +95,11 @@
     "category": "Fantasy",
     "tags": ["Adventure", "Epic"],
     "publisher": "Allen & Unwin",
-    "yearOfPublishing": 1937
+    "yearOfPublishing": 1937,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 7,
@@ -88,7 +112,11 @@
     "category": "Fantasy",
     "tags": ["Magic", "Young Adult"],
     "publisher": "Bloomsbury",
-    "yearOfPublishing": 1997
+    "yearOfPublishing": 1997,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 8,
@@ -101,7 +129,11 @@
     "category": "Fiction",
     "tags": ["Philosophical", "Adventure"],
     "publisher": "HarperCollins",
-    "yearOfPublishing": 1988
+    "yearOfPublishing": 1988,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   },
   {
     "bookId": 9,
@@ -114,6 +146,10 @@
     "category": "Mystery",
     "tags": ["Suspense", "Psychological"],
     "publisher": "Riverhead Books",
-    "yearOfPublishing": 2015
+    "yearOfPublishing": 2015,
+    "narratedBy": "Ray Porter",
+    "length": "16 hrs and 10 mins",
+    "releaseDate": "04-05-21",
+    "language": "English"
   }
 ]

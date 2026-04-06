@@ -21,7 +21,7 @@ const Navbar = () => {
               ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
               : ""
           }
-          to={"books"}
+          to={"listed-books"}
         >
           Listed Books
         </NavLink>

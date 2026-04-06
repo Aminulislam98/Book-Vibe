@@ -29,7 +29,7 @@ const BookDetails = () => {
         <div className="lg:max-w-110">
           <img className="h-full object-contain" src={image} alt={bookName} />
         </div>
-        {/* wright section */}
+        {/* right section */}
         <div className="px-2 text-white flex flex-col justify-center items-start w-full space-y-2">
           <h1 className="font-bold text-4xl">{bookName}</h1>
           <p className="font-medium text-xl text-[#b794f4]">{author}</p>
