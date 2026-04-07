@@ -10,7 +10,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { PiGradient } from "react-icons/pi";
 
 const ChartForPage = () => {
   const { storeWishList } = useContext(BooksContext);
@@ -43,11 +42,10 @@ const ChartForPage = () => {
         <XAxis dataKey="name" tick={{ fill: "#10b981" }} />
         <YAxis width="auto" />
         <Tooltip />
-        <PiGradient />
         <Area
           type="monotone"
           dataKey="Pages"
-          fill="url(#splitColor)"
+          fill="#10b981"
           stroke="#10b981"
           fillOpacity={0.4}
         />

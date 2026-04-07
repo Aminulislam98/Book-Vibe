@@ -32,8 +32,8 @@ const Banner = () => {
             </h1>
 
             <button
-              className=" w-fit   text-base md:text-xl md:font-bold  font-semibold py-2.5 px-3 lg:py-4 lg:px-7 rounded  md:rounded-xl cursor-pointer bg-[#0f2238] border border-[#1a3a5c] text-[#a0c4e0] 
-           hover:bg-[#1a3a5c] hover:border-[#a0c4e0] transition-colors duration-200"
+              className=" w-fit   text-base md:text-xl md:font-bold  font-semibold py-2.5 px-3 lg:py-4 lg:px-7 rounded  md:rounded-xl  bg-[#0f2238] border border-[#1a3a5c] text-[#a0c4e0] 
+           hover:bg-[#1a3a5c] hover:border-[#a0c4e0] transition-colors duration-200 cursor-not-allowed"
             >
               View The List
             </button>
