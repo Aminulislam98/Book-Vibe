@@ -1,7 +1,11 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import {
+  getAllReadBoosFromDb,
+  addReadBookInLocalDb,
+} from "../../DataBase/BooksData.js";
 export const BooksContext = createContext();
 const BookProvider = ({ children }) => {
-  const [readList, setReadList] = useState([]);
+  const [readList, setReadList] = useState(() => getAllReadBoosFromDb());
   const [storeWishList, setWishList] = useState([]);
 
   const handleBookMarkRead = (selectedBook) => {
@@ -12,8 +16,10 @@ const BookProvider = ({ children }) => {
       //
     } else {
       setReadList([...readList, selectedBook]);
+      addReadBookInLocalDb(selectedBook);
     }
   };
+
   const handleWishlist = (selectedWhishListBook) => {
     const existWishList = storeWishList.find(
       (book) => book.bookId === selectedWhishListBook.bookId,

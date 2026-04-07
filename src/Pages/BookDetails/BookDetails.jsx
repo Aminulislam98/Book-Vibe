@@ -28,9 +28,8 @@ const BookDetails = () => {
     // setStoredReadMark,
   } = useContext(BooksContext);
   const goBack = useNavigate();
-  console.log(readList);
 
-  const existReadMark = readList.find((list) => list.bookId === Number(bookId));
+  const existReadMark = readList.find((list) => list.bookId == bookId);
   const existWishMark = storeWishList.find(
     (wishList) => wishList.bookId === Number(bookId),
   );
