@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 import { BooksContext } from "../../Context/BookContext/BookProvider.jsx";
-import { FaArrowLeft, FaBookOpen } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaBookOpen } from "react-icons/fa";
+import { GiBookshelf } from "react-icons/gi";
+import { IoBookSharp } from "react-icons/io5";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -45,15 +47,24 @@ const BookDetails = () => {
       // ref={bookDetailsRef}
       className="px-4 bg-[radial-gradient(ellipse_at_70%_50%,#0f2238_0%,#070f1e_40%,#020508_100%)] pt-5 md:pt-10 "
     >
-      <button
-        onClick={() => {
-          goBack(-1);
-        }}
-        className="flex items-center  gap-2 text-[#b794f4] hover:text-white transition-colors duration-200 text-base font-medium max-w-6xl mx-auto w-full pb-5"
-      >
-        <FaArrowLeft className="text-base" />
-        Back
-      </button>
+      <div className="flex flex-row justify-between mx-auto max-w-6xl">
+        <button
+          onClick={() => {
+            goBack(-1);
+          }}
+          className="flex items-center  gap-2 text-[#b794f4] hover:text-white transition-colors duration-200 text-base font-medium max-w-6xl   pb-5"
+        >
+          <FaArrowLeft className="text-base" />
+          Back
+        </button>
+        <Link
+          to={"/listed-books"}
+          className="flex items-center  gap-2 text-[#b794f4] hover:text-white transition-colors duration-200 text-base font-medium max-w-6xl   pb-5 underline md:hidden"
+        >
+          <IoBookSharp className="text-base" />
+          Go to the listed books.
+        </Link>
+      </div>
       <section className=" flex flex-row justify-center items-center lg:pt-10 pb-20">
         <div className="flex flex-col-reverse lg:flex-row max-w-6xl gap-10 lg:gap-5">
           {/* left section */}
