@@ -25,6 +25,19 @@ const BookProvider = ({ children }) => {
       // alert(`Added to read List`);
     }
   };
+  // removing data from wishlist
+  const removeWishList = (book) => {
+    console.log(book.bookId);
+    const matchingWishList = storeWishList.find(
+      (wish) => wish.bookId === book.bookId,
+    );
+    if (matchingWishList) {
+      const newWishList = storeWishList.filter(
+        (wishList) => wishList.bookId !== book.bookId,
+      );
+      setWishList(newWishList);
+    }
+  };
   const data = {
     handleBookMarkRead,
     readList,
@@ -32,6 +45,7 @@ const BookProvider = ({ children }) => {
     storeWishList,
     setWishList,
     handleWishlist,
+    removeWishList,
   };
   return <BooksContext.Provider value={data}>{children}</BooksContext.Provider>;
 };

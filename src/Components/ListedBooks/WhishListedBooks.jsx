@@ -15,7 +15,7 @@ const WhishListedBooks = () => {
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-6 sm:gap-5">
         {storeWishList.length > 0 ? (
           storeWishList.map((readBook) => (
-            <ReadBookCard readBook={readBook}></ReadBookCard>
+            <ReadBookCard readBook={readBook} showRemove={true}></ReadBookCard>
           ))
         ) : (
           <NoWishList></NoWishList>

@@ -16,7 +16,7 @@ const ReadListedBooks = () => {
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-6 sm:gap-5">
         {readList.length > 0 ? (
           readList.map((readBook) => (
-            <ReadBookCard readBook={readBook}></ReadBookCard>
+            <ReadBookCard readBook={readBook} showRemove={false}></ReadBookCard>
           ))
         ) : (
           <NoBooks></NoBooks>

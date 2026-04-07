@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaArrowLeft, FaBookOpen } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
+import { BooksContext } from "../../Context/BookContext/BookProvider";
 
-const ReadBookCard = ({ readBook }) => {
+const ReadBookCard = ({ readBook, showRemove = false }) => {
   const {
     bookId,
     bookName,
@@ -22,7 +23,8 @@ const ReadBookCard = ({ readBook }) => {
     price,
   } = readBook;
 
-  const backNavigate = useNavigate();
+  const { removeWishList } = useContext(BooksContext);
+
   return (
     <section className="w-full mx-auto flex flex-col sm:flex-row  gap-5 grow border-b  border-gray-300  space-y-1 pb-5">
       {/* left side */}
@@ -144,14 +146,29 @@ const ReadBookCard = ({ readBook }) => {
           >
             View Page Details
           </Link>
-          <button
-            onClick={() => {
-              backNavigate(-1);
-            }}
-            className="w-full font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer bg-transparent border border-[#b794f4] text-[#b794f4] hover:bg-[#2d1b4e] transition-colors duration-200 flex justify-center items-center"
-          >
-            Go Back
-          </button>
+          {showRemove && (
+            <button
+              onClick={() => {
+                removeWishList(readBook);
+              }}
+              className="font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer flex items-center justify-center gap-2 bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-100 transition-all duration-200"
+            >
+              <svg
+                className="w-4 h-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                />
+              </svg>
+              Remove from Wishlist
+            </button>
+          )}
         </div>
       </div>
     </section>
