@@ -10,7 +10,8 @@ const Navbar = () => {
             document.activeElement.blur();
           }}
           className={({ isActive }) =>
-            isActive && "text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
+            isActive &&
+            "text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
           }
           to={"/"}
         >
@@ -24,7 +25,7 @@ const Navbar = () => {
           }}
           className={({ isActive }) =>
             isActive
-              ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
+              ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
               : ""
           }
           to={"listed-books"}
@@ -38,7 +39,8 @@ const Navbar = () => {
             document.activeElement.blur();
           }}
           className={({ isActive }) =>
-            isActive && " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
+            isActive &&
+            " text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
           }
           to={"pages-to-read"}
         >
@@ -75,7 +77,7 @@ const Navbar = () => {
               {list}
             </ul>
           </div>
-          <div className=" text-xl font-bold flex flex-col justify-center items-center">
+          <div className=" text-xl font-bold flex flex-col justify-center items-start">
             <p className="text-xl md:text-2xl">
               <span>Book</span> <span className="text-[#b794f4]">Vibe</span>
             </p>
