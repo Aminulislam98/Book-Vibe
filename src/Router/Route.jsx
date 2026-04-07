@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/ErrorPage/Error";
 import Books from "../Pages/ListedBooks/ListedBooks.jsx";
 import BookDetails from "../Pages/BookDetails/BookDetails.jsx";
 import ListedBooks from "../Pages/ListedBooks/ListedBooks.jsx";
+import PageToRead from "../Pages/PageToRead/PageToRead.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "listed-books",
         Component: ListedBooks,
+      },
+      {
+        path: "/pages-to-read",
+        Component: PageToRead,
       },
       {
         path: "book-details/:bookId",

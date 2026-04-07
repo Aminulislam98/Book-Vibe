@@ -55,11 +55,15 @@ const BookDetails = () => {
         <FaArrowLeft className="text-base" />
         Back
       </button>
-      <section className=" pb-20  flex flex-row justify-center items-center">
-        <div className="flex flex-col-reverse md:flex-row max-w-6xl gap-10 lg:gap-5 ">
+      <section className=" flex flex-row justify-center items-center lg:pt-10 pb-20">
+        <div className="flex flex-col-reverse lg:flex-row max-w-6xl gap-10 lg:gap-5">
           {/* left section */}
-          <div className="lg:max-w-110">
-            <img className="h-full object-contain" src={image} alt={bookName} />
+          <div className="lg:max-w-100">
+            <img
+              className="h-full w-full object-cover"
+              src={image}
+              alt={bookName}
+            />
           </div>
           {/* right section */}
           <div className=" text-white flex flex-col justify-center items-start w-full space-y-2">

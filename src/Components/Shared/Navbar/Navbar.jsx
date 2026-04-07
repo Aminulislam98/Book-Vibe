@@ -6,6 +6,9 @@ const Navbar = () => {
     <>
       <li>
         <NavLink
+          onClick={() => {
+            document.activeElement.blur();
+          }}
           className={({ isActive }) =>
             isActive && "text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
           }
@@ -16,6 +19,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          onClick={() => {
+            document.activeElement.blur();
+          }}
           className={({ isActive }) =>
             isActive
               ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
@@ -28,6 +34,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          onClick={() => {
+            document.activeElement.blur();
+          }}
           className={({ isActive }) =>
             isActive && " text-[#b794f4] border-b-2 border-[#b794f4] font-bold"
           }
@@ -56,7 +65,7 @@ const Navbar = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
@@ -67,7 +76,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className=" text-xl font-bold flex flex-col justify-center items-center">
-            <p className="text-2xl">
+            <p className="text-xl md:text-2xl">
               <span>Book</span> <span className="text-[#b794f4]">Vibe</span>
             </p>
             <p className="text-[10px] font-normal hidden lg:flex text-[#b794f4]">
