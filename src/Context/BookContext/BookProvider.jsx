@@ -3,15 +3,15 @@ export const BooksContext = createContext();
 const BookProvider = ({ children }) => {
   const [readList, setReadList] = useState([]);
   const [storeWishList, setWishList] = useState([]);
+
   const handleBookMarkRead = (selectedBook) => {
     const existBook = readList.find(
       (book) => book.bookId === selectedBook.bookId,
     );
     if (existBook) {
-      alert(`${existBook.bookName} is already added to read list`);
+      //
     } else {
       setReadList([...readList, selectedBook]);
-      alert(`Added to read List`);
     }
   };
   const handleWishlist = (selectedWhishListBook) => {
@@ -19,10 +19,10 @@ const BookProvider = ({ children }) => {
       (book) => book.bookId === selectedWhishListBook.bookId,
     );
     if (existWishList) {
-      alert(`${existWishList.bookName} is already added to read list`);
+      // alert(`${existWishList.bookName} is already added to read list`);
     } else {
       setWishList([...storeWishList, selectedWhishListBook]);
-      alert(`Added to read List`);
+      // alert(`Added to read List`);
     }
   };
   const data = {

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaBookOpen } from "react-icons/fa";
-import { Link } from "react-router";
+import { FaArrowLeft, FaBookOpen } from "react-icons/fa";
+import { Link, useNavigate } from "react-router";
 
 const ReadBookCard = ({ readBook }) => {
   const {
@@ -21,6 +21,8 @@ const ReadBookCard = ({ readBook }) => {
     language,
     price,
   } = readBook;
+
+  const backNavigate = useNavigate();
   return (
     <section className="w-full mx-auto flex flex-col sm:flex-row  gap-5 grow border-b  border-gray-300  space-y-1 pb-5">
       {/* left side */}
@@ -142,6 +144,14 @@ const ReadBookCard = ({ readBook }) => {
           >
             View Page Details
           </Link>
+          <button
+            onClick={() => {
+              backNavigate(-1);
+            }}
+            className="w-full font-semibold py-1 px-3 md:px-7 rounded  md:rounded-xl cursor-pointer bg-transparent border border-[#b794f4] text-[#b794f4] hover:bg-[#2d1b4e] transition-colors duration-200 flex justify-center items-center"
+          >
+            Go Back
+          </button>
         </div>
       </div>
     </section>

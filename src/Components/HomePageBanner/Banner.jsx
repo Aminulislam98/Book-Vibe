@@ -26,7 +26,7 @@ const Banner = () => {
             <div></div>
           </div>
           <div className="flex flex-col gap-y-4 lg:gap-y-10 ">
-            <h1 className="text-3xl lg:text-6xl font-bold  lg:leading-17 text-[#a0c4e0]">
+            <h1 className="text-3xl lg:text-6xl font-bold  lg:leading-17 text-[#e2f0ff]">
               Books to freshen up <br className="lg:flex hidden" /> your
               bookshelf
             </h1>
