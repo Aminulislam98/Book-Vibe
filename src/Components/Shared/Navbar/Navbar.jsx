@@ -11,7 +11,7 @@ const Navbar = () => {
           }}
           className={({ isActive }) =>
             isActive &&
-            "text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
+            "text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none "
           }
           to={"/"}
         >
@@ -72,7 +72,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-black rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-lg  dropdown-content bg-black rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {list}
             </ul>
