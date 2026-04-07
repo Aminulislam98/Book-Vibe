@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-black w-full">
       {/* frequently asked questions */}
       <div className="max-w-5xl mx-auto py-10 flex flex-col justify-center items-center gap-y-2">
-        <h1 className="font-bold text-3xl text-white mb-5">
+        <h1 className="font-bold text-2xl md:text-3xl text-white mb-5">
           Frequently asked questions
         </h1>
         <details className="collapse  text-white border-b rounded-none border-[#A3D4FF]/40">
