@@ -2,11 +2,16 @@ import React, { createContext, useEffect, useState } from "react";
 import {
   getAllReadBoosFromDb,
   addReadBookInLocalDb,
+  getAllWishListBookFromDb,
+  AddWishBookInLocalStorage,
+  removeWishListFromDb,
 } from "../../DataBase/BooksData.js";
 export const BooksContext = createContext();
 const BookProvider = ({ children }) => {
   const [readList, setReadList] = useState(() => getAllReadBoosFromDb());
-  const [storeWishList, setWishList] = useState([]);
+  const [storeWishList, setWishList] = useState(() =>
+    getAllWishListBookFromDb(),
+  );
 
   const handleBookMarkRead = (selectedBook) => {
     const existBook = readList.find(
@@ -24,11 +29,9 @@ const BookProvider = ({ children }) => {
     const existWishList = storeWishList.find(
       (book) => book.bookId === selectedWhishListBook.bookId,
     );
-    if (existWishList) {
-      // alert(`${existWishList.bookName} is already added to read list`);
-    } else {
+    if (!existWishList) {
       setWishList([...storeWishList, selectedWhishListBook]);
-      // alert(`Added to read List`);
+      AddWishBookInLocalStorage(selectedWhishListBook);
     }
   };
   // removing data from wishlist
@@ -42,6 +45,7 @@ const BookProvider = ({ children }) => {
         (wishList) => wishList.bookId !== book.bookId,
       );
       setWishList(newWishList);
+      removeWishListFromDb(newWishList);
     }
   };
   const data = {
