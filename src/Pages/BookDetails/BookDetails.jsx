@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router";
 import { BooksContext } from "../../Context/BookContext/BookProvider.jsx";
 import { FaArrowLeft, FaBookOpen } from "react-icons/fa";
@@ -24,15 +24,28 @@ const BookDetails = () => {
     handleBookMarkRead,
     handleWishlist,
     readList,
+    storeWishList,
     // setStoredReadMark,
   } = useContext(BooksContext);
   const goBack = useNavigate();
   console.log(readList);
 
-  const exist = readList.find((list) => list.bookId === Number(bookId));
+  const existReadMark = readList.find((list) => list.bookId === Number(bookId));
+  const existWishMark = storeWishList.find(
+    (wishList) => wishList.bookId === Number(bookId),
+  );
+
+  // const bookDetailsRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [bookId]);
 
   return (
-    <div className="px-4 bg-[radial-gradient(ellipse_at_70%_50%,#0f2238_0%,#070f1e_40%,#020508_100%)] pt-5 md:pt-10 ">
+    <div
+      // ref={bookDetailsRef}
+      className="px-4 bg-[radial-gradient(ellipse_at_70%_50%,#0f2238_0%,#070f1e_40%,#020508_100%)] pt-5 md:pt-10 "
+    >
       <button
         onClick={() => {
           goBack(-1);
@@ -116,8 +129,8 @@ const BookDetails = () => {
                 onClick={() => {
                   handleBookMarkRead(existBook);
                 }}
-                className={`px-6 py-2 rounded-lg bg-[#0d3b2e] text-[#00ff87] border border-[#1a6b50] hover:bg-[#1a6b50] transition-colors duration-200 ${exist && "cursor-not-allowed "}`}
-                disabled={!!exist}
+                className={`px-6 py-2 rounded-lg bg-[#0d3b2e] text-[#00ff87] border border-[#1a6b50] hover:bg-[#1a6b50] transition-colors duration-200 ${existReadMark && "cursor-not-allowed "}`}
+                disabled={!!existReadMark}
               >
                 Mark as Read
               </button>
@@ -125,12 +138,13 @@ const BookDetails = () => {
                 onClick={() => {
                   handleWishlist(existBook);
                 }}
-                className="px-6 py-2 rounded-lg bg-[#2d1130] text-[#f472b6] border border-[#6b2150] hover:bg-[#6b2150] transition-colors duration-200"
+                disabled={!!existWishMark}
+                className={`px-6 py-2 rounded-lg bg-[#2d1130] text-[#f472b6] border border-[#6b2150] hover:bg-[#6b2150] transition-colors duration-200 ${existWishMark && "cursor-not-allowed"}`}
               >
                 Wishlist
               </button>
             </div>
-            {exist ? (
+            {existReadMark ? (
               <div className="flex items-center gap-3  w-fit">
                 <svg
                   width="24"
@@ -154,9 +168,47 @@ const BookDetails = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <p className="text-[#4a9eff] text-sm font-medium">
-                  This book has been added to your reading list.
-                </p>
+                <div className="text-[#00ff87] text-sm font-medium flex flex-row gap-2">
+                  {/* {`"${bookName}" added to Reading List`} */}
+                  <span className="font-bold ">{`"${bookName}"`}</span>
+                  <span className=" text-sm font-medium">
+                    added to Reading List
+                  </span>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+            {existWishMark ? (
+              <div className="flex items-center gap-3  w-fit">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 2L13.5 4.5H17.5V8.5L20 11L17.5 13.5V17.5H13.5L11 20L8.5 17.5H4.5V13.5L2 11L4.5 8.5V4.5H8.5L11 2Z"
+                    fill="#1a3a6b"
+                    stroke="#4a9eff"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7.5 11L9.5 13L14.5 8.5"
+                    stroke="#4a9eff"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div className="text-[#f472b6] text-sm font-medium flex flex-row gap-2">
+                  <span className="font-bold ">{`"${bookName}"`}</span>
+                  <span className=" text-sm font-medium">
+                    added to WishList
+                  </span>
+                </div>
               </div>
             ) : (
               ""

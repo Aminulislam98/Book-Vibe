@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BooksContext } from "../../Context/BookContext/BookProvider.jsx";
 import ReadBookCard from "./ReadBookCard.jsx";
 import { FaBookOpen } from "react-icons/fa";
@@ -7,6 +7,9 @@ import NoBooks from "./NoBooks.jsx";
 const ReadListedBooks = () => {
   const { readList, setReadList, handleBookMarkRead } =
     useContext(BooksContext);
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   return (
     <section className="">
