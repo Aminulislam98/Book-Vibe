@@ -4,9 +4,11 @@ import ReadListedBooks from "../../Components/ListedBooks/ReadListedBooks";
 import WhishListedBooks from "../../Components/ListedBooks/WhishListedBooks";
 import { useNavigate } from "react-router";
 import { FaArrowLeft } from "react-icons/fa";
+import { useState } from "react";
 
 const ListedBooks = () => {
   const goBack = useNavigate();
+  const [shortingType, setShortingType] = useState("");
   return (
     <>
       <button
@@ -37,11 +39,17 @@ const ListedBooks = () => {
           </TabList>
 
           <TabPanel className="mt-4">
-            <ReadListedBooks />
+            <ReadListedBooks
+              setShortingType={setShortingType}
+              shortingType={shortingType}
+            />
           </TabPanel>
 
           <TabPanel className="mt-4">
-            <WhishListedBooks />
+            <WhishListedBooks
+              setShortingType={setShortingType}
+              shortingType={shortingType}
+            />
           </TabPanel>
         </Tabs>
       </section>
