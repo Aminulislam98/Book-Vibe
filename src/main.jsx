@@ -9,7 +9,10 @@ import BookProvider from "./Context/BookContext/BookProvider.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BookProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider
+        fallback={<p>Loading...</p>}
+        router={router}
+      ></RouterProvider>
     </BookProvider>
   </StrictMode>,
 );

@@ -10,8 +10,9 @@ const Navbar = () => {
             document.activeElement.blur();
           }}
           className={({ isActive }) =>
-            isActive &&
-            "text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none "
+            isActive
+              ? "text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none "
+              : undefined
           }
           to={"/"}
         >
@@ -26,7 +27,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
-              : ""
+              : undefined
           }
           to={"listed-books"}
         >
@@ -39,8 +40,9 @@ const Navbar = () => {
             document.activeElement.blur();
           }}
           className={({ isActive }) =>
-            isActive &&
-            " text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
+            isActive
+              ? " text-[#b794f4] border-b-2 border-[#b794f4] font-bold rounded-none"
+              : undefined
           }
           to={"pages-to-read"}
         >

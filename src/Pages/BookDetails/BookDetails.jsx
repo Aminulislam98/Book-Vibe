@@ -58,6 +58,7 @@ const BookDetails = () => {
           Back
         </button>
         <Link
+          key={existBook.bookId}
           to={"/listed-books"}
           className="flex items-center  gap-2 text-[#b794f4] hover:text-white transition-colors duration-200 text-base font-medium max-w-6xl   pb-5 underline md:hidden"
         >
@@ -91,9 +92,12 @@ const BookDetails = () => {
             <div className="flex flex-row gap-3">
               <p className="uppercase tracking-widest text-sm">Tags:</p>
               <p className="flex flex-row gap-2 ">
-                {tags.map((tag) => {
+                {tags.map((tag, index) => {
                   return (
-                    <span className="px-2 flex justify-center items-center rounded text-sm bg-[#0f2238] border border-[#1a3a5c] text-[#a0c4e0] ">
+                    <span
+                      key={index}
+                      className="px-2 flex justify-center items-center rounded text-sm bg-[#0f2238] border border-[#1a3a5c] text-[#a0c4e0] "
+                    >
                       {tag}
                     </span>
                   );
@@ -171,15 +175,15 @@ const BookDetails = () => {
                     d="M11 2L13.5 4.5H17.5V8.5L20 11L17.5 13.5V17.5H13.5L11 20L8.5 17.5H4.5V13.5L2 11L4.5 8.5V4.5H8.5L11 2Z"
                     fill="#1a3a6b"
                     stroke="#4a9eff"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M7.5 11L9.5 13L14.5 8.5"
                     stroke="#4a9eff"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <div className="text-[#00ff87] text-sm font-medium flex flex-row gap-2">
@@ -206,15 +210,15 @@ const BookDetails = () => {
                     d="M11 2L13.5 4.5H17.5V8.5L20 11L17.5 13.5V17.5H13.5L11 20L8.5 17.5H4.5V13.5L2 11L4.5 8.5V4.5H8.5L11 2Z"
                     fill="#1a3a6b"
                     stroke="#4a9eff"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M7.5 11L9.5 13L14.5 8.5"
                     stroke="#4a9eff"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <div className="text-[#f472b6] text-sm font-medium flex flex-row gap-2">

@@ -5,6 +5,7 @@ const Book = ({ book }) => {
   const { bookId, bookName, author, image, rating, category, tags } = book;
   return (
     <Link
+      key={bookId}
       to={`book-details/${bookId}`}
       title="Click to show details"
       className="w-full flex flex-col rounded-t overflow-hidden  cursor-pointer"
