@@ -6,14 +6,6 @@ A modern book discovery and management Single Page Application (SPA) built with 
 
 [https://your-live-link.netlify.app](https://your-live-link.netlify.app)
 
----
-
-## 📸 Screenshots
-
-> Add your screenshots here
-
----
-
 ## ✨ Features
 
 - 🏠 **Home Page** — Responsive book grid with cover, title, author, rating, tags & category
