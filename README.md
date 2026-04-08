@@ -4,7 +4,7 @@ A modern book discovery and management Single Page Application (SPA) built with 
 
 ## 🌐 Live Demo
 
-[https://your-live-link.netlify.app/](https://your-live-link.netlify.app)
+[https://bookvibewebsite.netlify.app/](https://your-live-link.netlify.app)
 
 ## ✨ Features
 
