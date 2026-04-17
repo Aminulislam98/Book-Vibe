@@ -14,7 +14,6 @@ import {
 const ChartForPage = () => {
   const { storeWishList } = useContext(BooksContext);
 
-  // ✅ এভাবে করো
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
